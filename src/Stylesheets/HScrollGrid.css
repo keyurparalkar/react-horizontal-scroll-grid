@@ -1,0 +1,15 @@
+div.hscroll-grid{
+    width:400px;
+    display:grid;
+    grid-template-columns: repeat(3, 100px);
+}
+
+div.card{
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
