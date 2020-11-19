@@ -1,10 +1,16 @@
-div.hscroll-grid{
+ul.hscroll-grid{
     width:400px;
-    display:grid;
-    grid-template-columns: repeat(3, 100px);
-}
+    height: 100px;
 
-div.card{
+    display:grid;
+    grid-template-columns: repeat(var(--total), 100px);
+    grid-column-gap: 10px;
+
+    overflow-x:scroll;
+    overflow-y:hidden;
+}   
+
+li.card{
     width: 100px;
     height: 100px;
     background-color: antiquewhite;
