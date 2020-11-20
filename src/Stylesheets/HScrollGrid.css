@@ -3,14 +3,14 @@ ul.hscroll-grid{
     height: 100px;
 
     display:grid;
-    grid-template-columns: repeat(var(--total), 100px);
+    grid-template-columns: repeat(var(--total), 100px) 10px;
     grid-column-gap: 10px;
 
     overflow-x:scroll;
     overflow-y:hidden;
 }   
 
-li.card{
+li{
     width: 100px;
     height: 100px;
     background-color: antiquewhite;
