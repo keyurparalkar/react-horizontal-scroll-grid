@@ -6,7 +6,11 @@ const Example = () => {
     const cards = keys.map(elem => <li key={elem}> Test </li>);
     return (
         <>
-            <HScrollGrid>
+            <HScrollGrid 
+            gridWidth={400}
+            gridHeight={100}
+            cardWidth={100}            
+            >
                 {cards}
                 </HScrollGrid>
         </>

@@ -1,9 +1,9 @@
 ul.hscroll-grid{
-    width:400px;
-    height: 100px;
+    width:var(--gridWidth);
+    height: var(--gridHeight);
 
     display:grid;
-    grid-template-columns: repeat(var(--total), 100px) 10px;
+    grid-template-columns: repeat(var(--total), var(--cardWidth)) 10px;
     grid-column-gap: 10px;
 
     overflow-x:scroll;
@@ -11,8 +11,8 @@ ul.hscroll-grid{
 }   
 
 li{
-    width: 100px;
-    height: 100px;
+    width: var(--cardWidth);
+    height: var(--gridHeight);
     background-color: antiquewhite;
     display: flex;
     flex-direction: row;

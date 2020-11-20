@@ -10,7 +10,14 @@ class HScrollGrid extends React.Component{
 
     componentDidMount(){
         let n = this.hscrollRef.current.children.length;
+        let gW = `${this.props.gridWidth}px`;
+        let gH = `${this.props.gridHeight}px`;
+        let cW = `${this.props.cardWidth}px`;
+
         this.hscrollRef.current.style.setProperty('--total', n);
+        this.hscrollRef.current.style.setProperty('--gridWidth', gW);
+        this.hscrollRef.current.style.setProperty('--gridHeight', gH);
+        this.hscrollRef.current.style.setProperty('--cardWidth', cW);
     }
     render(){
         return(
