@@ -13,11 +13,13 @@ class HScrollGrid extends React.Component{
         let gW = `${this.props.gridWidth}px`;
         let gH = `${this.props.gridHeight}px`;
         let cW = `${this.props.cardWidth}px`;
+        let cardBgColor = this.props.backgroundColor ? this.props.backgroundColor : 'transparent';
 
         this.hscrollRef.current.style.setProperty('--total', n);
         this.hscrollRef.current.style.setProperty('--gridWidth', gW);
         this.hscrollRef.current.style.setProperty('--gridHeight', gH);
         this.hscrollRef.current.style.setProperty('--cardWidth', cW);
+        this.hscrollRef.current.style.setProperty('--cBgCol', cardBgColor);
     }
     render(){
         return(
