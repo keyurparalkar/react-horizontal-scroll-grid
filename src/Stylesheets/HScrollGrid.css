@@ -1,0 +1,28 @@
+ul.hscroll-grid{
+    width:var(--gridWidth);
+    height: var(--gridHeight);
+
+    display:grid;
+    grid-template-columns: repeat(var(--total), var(--cardWidth)) 10px;
+    grid-column-gap: 20px;
+
+    overflow-x:scroll;
+    overflow-y:hidden;
+}   
+
+li{
+    width: var(--cardWidth);
+    height: var(--gridHeight);
+    background-color: var(--cBgCol);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+li:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
