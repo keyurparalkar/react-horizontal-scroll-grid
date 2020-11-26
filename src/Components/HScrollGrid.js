@@ -25,7 +25,7 @@ class HScrollGrid extends React.Component{
     }
     render(){
         return(
-            <ul className="hscroll-grid" ref={this.hscrollRef}>
+            <ul className="hscroll-grid" data-testid="test-ul" ref={this.hscrollRef}>
                 {this.props.children}
             </ul>
         );
