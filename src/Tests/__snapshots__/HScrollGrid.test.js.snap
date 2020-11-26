@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshots 1`] = `
+<DocumentFragment>
+  <ul
+    class="hscroll-grid"
+    data-testid="test-ul"
+    style="--total: 0; --gridWidth: undefinedpx; --gridHeight: undefinedpx; --cardWidth: undefinedpx; --cBgCol: transparent;"
+  />
+</DocumentFragment>
+`;

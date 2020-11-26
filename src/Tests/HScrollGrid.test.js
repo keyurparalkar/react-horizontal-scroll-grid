@@ -13,11 +13,11 @@ import HScrollGrid from '../Components/HScrollGrid.js';
 
 configure({ adapter: new Adapter() });
 
-// it("Matches Snapshots", ()=> {
-//     const { asFragment } = render(<HScrollGrid/>);
+it("Matches Snapshots", ()=> {
+    const { asFragment } = render(<HScrollGrid/>);
 
-//     expect(asFragment()).toMatchSnapshot();
-// });
+    expect(asFragment()).toMatchSnapshot();
+});
 
 it('Does Root Element Exists?', () => {
     // const keys = [1, 2];
@@ -41,6 +41,5 @@ it('Does BackgroundColor exits for children?', () => {
         // console.log(ulNode.style['_values']['--cBgCol'])
 
         expect(ulNode.style['_values']['--cBgCol']).toBe("blue");
-    // expect(mockElem1.container.firstChild).toHaveClass('hscroll-grid');
-    // expect(mockElem1.container.firstChild).toHaveStyle('width:400px');
+        
 });
