@@ -20,8 +20,6 @@ it("Matches Snapshots", ()=> {
 });
 
 it('Does Root Element Exists?', () => {
-    // const keys = [1, 2];
-    // const cards = keys.map(elem => <li key={elem}> Test </li>);
     const cards = [<li key="1">Test</li>]
     const mockElem0 = shallow(<HScrollGrid>{cards}
     </HScrollGrid>);
@@ -29,17 +27,48 @@ it('Does Root Element Exists?', () => {
     expect(mockElem0.find('.hscroll-grid')).toHaveLength(1);
 });
 
-it('Does BackgroundColor exits for children?', () => {
-    const cards = [<li key="1">Test</li>]
-    const { getByTestId } = render(<HScrollGrid
-        gridWidth={400}
-        gridHeight={100}
-        cardWidth={100}
-        backgroundColor="blue">{cards}</HScrollGrid>);
+describe('Checking HScrollGrid Attributes', ()=>{
+    it('Does HScrollGrid has GridWidth, GridHeight, cardWidth?', ()=>{
+        const { getByTestId } = render(<HScrollGrid 
+            gridWidth={500}
+            gridHeight={200}
+            cardWidth={250}
+            backgroundColor="grey"
+        />);
+    
+        const ulNode = getByTestId('test-ul');
+        expect(ulNode.style['_values']['--gridWidth'].indexOf('undefined')).toBe(-1);
+        expect(ulNode.style['_values']['--gridHeight'].indexOf('undefined')).toBe(-1);
+        expect(ulNode.style['_values']['--cardWidth'].indexOf('undefined')).toBe(-1);
+        expect(ulNode.style['_values']['--cBgCol'].indexOf('undefined')).toBe(-1);
+    });
+
+    it('Does HScrollGrid has GridWidth=500px and GridHeight=200px ?',()=>{
+        const { getByTestId } = render(<HScrollGrid data-testid="test-parent-container"
+                gridWidth={500}
+                gridHeight={200}        
+        />);
 
         const ulNode = getByTestId('test-ul');
-        // console.log(ulNode.style['_values']['--cBgCol'])
 
-        expect(ulNode.style['_values']['--cBgCol']).toBe("blue");
-        
+        expect(ulNode.style['_values']['--gridWidth']).toBe('500px');
+        expect(ulNode.style['_values']['--gridHeight']).toBe('200px');
+
+    });
+
+    it('Is BackgroundColor blue for all children?', () => {
+        const cards = [<li key="1">Test</li>]
+        const { getByTestId } = render(<HScrollGrid
+            gridWidth={400}
+            gridHeight={100}
+            cardWidth={100}
+            backgroundColor="blue">{cards}</HScrollGrid>);
+    
+            const ulNode = getByTestId('test-ul');
+    
+            expect(ulNode.style['_values']['--cBgCol']).toBe("blue");
+            
+    });
 });
+
+
