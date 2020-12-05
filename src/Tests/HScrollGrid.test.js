@@ -3,15 +3,11 @@
  */
 
 import React from 'react';
-import { shallow, mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import HScrollGrid from '../Components/HScrollGrid.js';
 
-
-configure({ adapter: new Adapter() });
 
 it("Matches Snapshots", ()=> {
     const { asFragment } = render(<HScrollGrid/>);
@@ -19,13 +15,6 @@ it("Matches Snapshots", ()=> {
     expect(asFragment()).toMatchSnapshot();
 });
 
-it('Does Root Element Exists?', () => {
-    const cards = [<li key="1">Test</li>]
-    const mockElem0 = shallow(<HScrollGrid>{cards}
-    </HScrollGrid>);
-
-    expect(mockElem0.find('.hscroll-grid')).toHaveLength(1);
-});
 
 describe('Checking HScrollGrid Attributes', ()=>{
     it('Does HScrollGrid has GridWidth, GridHeight, cardWidth?', ()=>{
