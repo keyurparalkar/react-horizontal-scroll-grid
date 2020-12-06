@@ -1,7 +1,7 @@
 {
   "name": "react-horizontal-scroll-grid",
-  "version": "0.1.1",
-  "main":"src/Components/HScrollGrid.js",
+  "version": "0.1.3",
+  "main": "lib/Components/HScrollGrid.js",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "./node_modules/.bin/babel src -d lib",
     "test": "jest",
     "eject": "react-scripts eject"
   },
@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
