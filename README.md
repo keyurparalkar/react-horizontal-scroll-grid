@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+<h1 align="center">
+  
+  <h1 align="center">react-horizontal-scroll-grid</h1>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">A simple UI component for <a href="https://reactjs.org/" target="_blank">React</a></h4>
 
-## Available Scripts
+[![npm version](https://img.shields.io/npm/v/react-horizontal-scroll-grid?color=green)](https//npmjs.com/package/react-horizontal-scroll-grid)
+[![license](https://img.shields.io/packagist/l/keyurparalkar/react-horizontal-scroll-grid)]()
 
-In the project directory, you can run:
+```
+<HScrollGrid gridWidth={400} gridHeight={100} cardWidth={100} backgroundColor="antiquewhite">
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+</HScrollGrid>
+```
+### Demo
+![Alt Text](./media/demo.gif)
 
-### `npm start`
+### Changelog
+|Version     | Compatibility|
+|------------|--------------|
+|0.1.3       | React 16.3+  |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technical Documentation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [Installing](#Installing)
+* [Exports](#Exports)
 
-### `npm test`
+#### Installing
+```
+npm install react-horizontal-scroll-grid
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Exports
+The `HScrollGrid` component can exported as follows:
+```
+import HScrollGrid from "react-horizontal-scroll-grid"
+```
 
-### `npm run build`
+### HScrollGrid
+A `HScrollGrid` is a simple UI Wrapper Component which helps you to display in your `<li>` items in horizontal scroll view. It is completely css based implementation. The count of child elements is directly computed at `componentDidMount` stage and set using css variables.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### HScrollGrid Props
+|Prop Name     | Required |Default value | Description| 
+|------------|--------------|----------|---------|
+|gridWidth       | Yes| `null` | Should be passed as `number`
+|gridHeight | Yes | `null`| Should be passed as `number` *
+|cardWidth| Yes | `null`| Should be passed as `number`
+|backgroundColor |No| `transparent`| Should be passed `String`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**NOTE**
+* `gridWidth`, `gridHeight`,`cardWidth` should be passed in as `number` since they are used as pixels in css.
+* Please be aware that by providing the value of `gridHeight` you are also setting the height of each child element to `gridHeight` i.e. Grid's `gridHeight` = card's `gridHeight` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Usage
+```
+import React from 'react';
+import HScrollGrid from 'react-horizontal-scroll-grid';
 
-### `npm run eject`
+const Example = () => {
+    const keys = [1, 2, 3, 4, 5, 6];
+    const cards = keys.map(elem => <li key={elem}> Test </li>);
+    return (
+        <>
+            <HScrollGrid
+                gridWidth={400}
+                gridHeight={100}
+                cardWidth={100}
+                backgroundColor="antiquewhite"
+            >
+                {cards}
+            </HScrollGrid>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+            <HScrollGrid
+                gridWidth={700}
+                gridHeight={100}
+                cardWidth={200}
+                backgroundColor="antiquewhite"
+            >
+                {cards}
+            </HScrollGrid>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+            <HScrollGrid
+                gridWidth={1000}
+                gridHeight={300}
+                cardWidth={400}
+                backgroundColor="#ecf2a7"
+            >
+                {cards}
+            </HScrollGrid>
+        </>
+    )
+};
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+export default Example;
+```
+## Built with
+- [React](https://reactjs.org/)
+- [Jest](https://jestjs.io/en/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Features
+- Provides a UI wrapper to wrap child elements in horizontal scrolling view.
+- Dynamic child element count computation using css variables.
+- Easy-to-use
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## You can reach out 😊😊
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to contact me about the problems. I will try to help as much as I can 😉
 
-### Code Splitting
+[![Linkedin Badge](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keyur-paralkar-494415107/)
+[![Mail Badge](https://img.shields.io/badge/email-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:furkanozbek1995@gmail.com)](mailto:keur.plkar@gmail.com)
+[![Twitter Badge](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/keurplkar)
+[![Github Badge](https://img.shields.io/badge/github-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/keyurparalkar/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
