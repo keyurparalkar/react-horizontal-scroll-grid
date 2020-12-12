@@ -6,7 +6,7 @@
 <h4 align="center">A simple UI component for <a href="https://reactjs.org/" target="_blank">React</a></h4>
 
 [![npm version](https://img.shields.io/npm/v/react-horizontal-scroll-grid?color=green)](https//npmjs.com/package/react-horizontal-scroll-grid)
-[![license](https://img.shields.io/packagist/l/keyurparalkar/react-horizontal-scroll-grid)]()
+[![license](https://img.shields.io/github/license/keyurparalkar/react-horizontal-scroll-grid)](https://github.com/keyurparalkar/react-horizontal-scroll-grid/blob/main/License.md)
 
 ```
 <HScrollGrid gridWidth={400} gridHeight={100} cardWidth={100} backgroundColor="antiquewhite">
