@@ -2,6 +2,11 @@
   "name": "react-horizontal-scroll-grid",
   "version": "0.1.3",
   "main": "lib/Components/HScrollGrid.js",
+  "license": "MIT",
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/keyurparalkar/react-horizontal-scroll-grid.git"
+  },
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
